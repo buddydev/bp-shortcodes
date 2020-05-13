@@ -45,7 +45,7 @@ class Bootstrapper {
 	public function load() {
 		require_once bp_shortcodes()->path . 'src/core/bp-shortcodes-functions.php';
 
-		//Assets_Loader::boot();
+		Assets_Loader::boot();
 
 		if ( bp_is_active( 'xprofile' ) ) {
 			Profile_Shortcode::boot();

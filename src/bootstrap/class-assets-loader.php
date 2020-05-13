@@ -63,9 +63,9 @@ class Assets_Loader {
 	 */
 	public function enqueue() {
 		wp_enqueue_style( 'bp_shortcodes' );
-		wp_enqueue_script( 'bp_shortcodes' );
+		//wp_enqueue_script( 'bp_shortcodes' );
 
-		wp_localize_script( 'bp_shortcodes', 'BP_SHORTCODES', $this->data );
+		//wp_localize_script( 'bp_shortcodes', 'BP_SHORTCODES', $this->data );
 	}
 
 	/**
@@ -88,12 +88,12 @@ class Assets_Loader {
 			$version
 		);
 
-		wp_register_script(
+		/*wp_register_script(
 			'bp_shortcodes',
 			$url . 'assets/js/bp-shortcodes.js',
 			array( 'jquery' ),
 			$version
-		);
+		);*/
 
 		$this->data = array();
 	}

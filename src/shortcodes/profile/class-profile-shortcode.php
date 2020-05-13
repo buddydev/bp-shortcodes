@@ -85,7 +85,7 @@ class Profile_Shortcode {
 
 		remove_filter( 'bp_after_has_profile_parse_args', array( $this, 'modify_args' ) );
 
-		return $content;
+		return '<div class="bp-shortcodes">' . $content . '</div>';
 	}
 
 	/**
