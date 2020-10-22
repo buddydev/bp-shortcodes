@@ -13,6 +13,7 @@
 namespace BP_Shortcodes\Bootstrap;
 
 use BP_Shortcodes\Shortcodes\Profile\Profile_Shortcode;
+use BP_Shortcodes\Shortcodes\User\User_Shortcodes;
 
 // Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
@@ -46,6 +47,7 @@ class Bootstrapper {
 		require_once bp_shortcodes()->path . 'src/core/bp-shortcodes-functions.php';
 
 		Assets_Loader::boot();
+		User_Shortcodes::boot();
 
 		if ( bp_is_active( 'xprofile' ) ) {
 			Profile_Shortcode::boot();
