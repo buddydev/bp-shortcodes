@@ -33,13 +33,13 @@ class User_Shortcodes {
 	 * Create shortcode
 	 */
 	private function setup() {
-		add_shortcode( 'bp-shortcodes-user-id', array( $this, 'render_user_id' ) );
-		add_shortcode( 'bp-shortcodes-username', array( $this, 'render_username' ) );
-		add_shortcode( 'bp-shortcodes-user-email', array( $this, 'render_user_user_email' ) );
-		add_shortcode( 'bp-shortcodes-user-registration-date', array( $this, 'render_user_registration_date' ) );
-		add_shortcode( 'bp-shortcodes-user-display-name', array( $this, 'render_user_display_name' ) );
-		add_shortcode( 'bp-shortcodes-user-member-type', array( $this, 'render_user_member_type' ) );
-		add_shortcode( 'bp-shortcodes-user-avatar', array( $this, 'render_user_avatar' ) );
+		add_shortcode( 'bpsc-user-id', array( $this, 'render_user_id' ) );
+		add_shortcode( 'bpsc-username', array( $this, 'render_username' ) );
+		add_shortcode( 'bpsc-user-email', array( $this, 'render_user_user_email' ) );
+		add_shortcode( 'bpsc-user-registration-date', array( $this, 'render_user_registration_date' ) );
+		add_shortcode( 'bpsc-user-display-name', array( $this, 'render_user_display_name' ) );
+		add_shortcode( 'bpsc-user-member-type', array( $this, 'render_user_member_type' ) );
+		add_shortcode( 'bpsc-user-avatar', array( $this, 'render_user_avatar' ) );
 	}
 
 	/**
