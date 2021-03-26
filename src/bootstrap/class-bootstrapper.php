@@ -12,6 +12,7 @@
 
 namespace BP_Shortcodes\Bootstrap;
 
+use BP_Shortcodes\Shortcodes\Profile\Profile_Data_Shortcodes;
 use BP_Shortcodes\Shortcodes\Profile\Profile_Shortcode;
 use BP_Shortcodes\Shortcodes\User\User_Shortcodes;
 
@@ -51,6 +52,7 @@ class Bootstrapper {
 
 		if ( bp_is_active( 'xprofile' ) ) {
 			Profile_Shortcode::boot();
+			Profile_Data_Shortcodes::boot();
 		}
 	}
 

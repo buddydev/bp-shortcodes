@@ -56,7 +56,7 @@ class User_Shortcodes {
 			$atts
 		);
 
-		$user_id = bp_shortcodes_get_user_id( $atts['context'] );
+		$user_id = bpsc_get_context_user_id( $atts['context'] );
 
 		if ( ! $user_id ) {
 			return '';
@@ -87,7 +87,7 @@ class User_Shortcodes {
 			$atts
 		);
 
-		$user_id = empty( $atts['user_id'] ) ? bp_shortcodes_get_user_id( $atts['context'] ) : absint( $atts['user_id'] );
+		$user_id = empty( $atts['user_id'] ) ? bpsc_get_context_user_id( $atts['context'] ) : absint( $atts['user_id'] );
 		$user    = $this->get_user( $user_id );
 
 		if ( ! $user ) {
@@ -119,7 +119,7 @@ class User_Shortcodes {
 			$atts
 		);
 
-		$user_id = empty( $atts['user_id'] ) ? bp_shortcodes_get_user_id( $atts['context'] ) : absint( $atts['user_id'] );
+		$user_id = empty( $atts['user_id'] ) ? bpsc_get_context_user_id( $atts['context'] ) : absint( $atts['user_id'] );
 		$user    = $this->get_user( $user_id );
 
 		if ( ! $user ) {
@@ -150,7 +150,7 @@ class User_Shortcodes {
 			$atts
 		);
 
-		$user_id = empty( $atts['user_id'] ) ? bp_shortcodes_get_user_id( $atts['context'] ) : absint( $atts['user_id'] );
+		$user_id = empty( $atts['user_id'] ) ? bpsc_get_context_user_id( $atts['context'] ) : absint( $atts['user_id'] );
 		$user    = $this->get_user( $user_id );
 
 		if ( ! $user ) {
@@ -182,7 +182,7 @@ class User_Shortcodes {
 			$atts
 		);
 
-		$user_id = empty( $atts['user_id'] ) ? bp_shortcodes_get_user_id( $atts['context'] ) : absint( $atts['user_id'] );
+		$user_id = empty( $atts['user_id'] ) ? bpsc_get_context_user_id( $atts['context'] ) : absint( $atts['user_id'] );
 		$user    = $this->get_user( $user_id );
 
 		if ( ! $user ) {
@@ -214,7 +214,7 @@ class User_Shortcodes {
 			$atts
 		);
 
-		$user_id = empty( $atts['user_id'] ) ? bp_shortcodes_get_user_id( $atts['context'] ) : absint( $atts['user_id'] );
+		$user_id = empty( $atts['user_id'] ) ? bpsc_get_context_user_id( $atts['context'] ) : absint( $atts['user_id'] );
 
 		if ( ! $user_id ) {
 			return '';
@@ -249,7 +249,7 @@ class User_Shortcodes {
 			$atts
 		);
 
-		$user_id = empty( $atts['user_id'] ) ? bp_shortcodes_get_user_id( $atts['context'] ) : absint( $atts['user_id'] );
+		$user_id = empty( $atts['user_id'] ) ? bpsc_get_context_user_id( $atts['context'] ) : absint( $atts['user_id'] );
 
 		if ( ! $user_id ) {
 			return '';
