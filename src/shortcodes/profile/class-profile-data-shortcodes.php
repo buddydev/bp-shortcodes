@@ -89,8 +89,11 @@ class Profile_Data_Shortcodes {
 		if ( ! $user_id ) {
 			return '';
 		}
+		$field_id = is_numeric( $atts['field'] )? $atts['field'] : xprofile_get_field_id_from_name($atts['field']);
+		$_field = xprofile_get_field( $field_id, $user_id, true );
 
-		$values = bpsc_xprofile_get_field_data_raw( $atts['field'], $user_id );
+		// we probably don't need it any more as we have started using $_field now.
+		$values = bpsc_xprofile_get_field_data_raw( $field_id, $user_id );
 
 		$output = '';
 		// is it multi valued field.
@@ -100,8 +103,11 @@ class Profile_Data_Shortcodes {
 				$formatted_values[] = sprintf( $atts['multi_option_wrap'], $value );
 			}
 			$output = join( $atts['separator'], $formatted_values );
-		} else {
-			$output = $values;
+		} elseif ( '' !== $values ) {
+			global $field;
+			$field = $_field;
+			// for normal non multi fields, let xprofile field data api handle it.
+			$output = apply_filters( 'bp_get_the_profile_field_value', $values, $_field->type, $_field->id );
 		}
 
 		return sprintf( $atts['value_wrap'], $output );
