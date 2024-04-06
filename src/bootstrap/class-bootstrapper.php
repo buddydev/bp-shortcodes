@@ -14,6 +14,7 @@ namespace BP_Shortcodes\Bootstrap;
 
 use BP_Shortcodes\Shortcodes\Profile\Profile_Data_Shortcodes;
 use BP_Shortcodes\Shortcodes\Profile\Profile_Shortcode;
+use BP_Shortcodes\Shortcodes\Profile\Profile_Photo_Shortcode;
 use BP_Shortcodes\Shortcodes\User\User_Shortcodes;
 
 // Do not allow direct access over web.
@@ -53,6 +54,10 @@ class Bootstrapper {
 		if ( bp_is_active( 'xprofile' ) ) {
 			Profile_Shortcode::boot();
 			Profile_Data_Shortcodes::boot();
+		}
+
+		if ( ! bp_disable_avatar_uploads() ) {
+			Profile_Photo_Shortcode::boot();
 		}
 	}
 
