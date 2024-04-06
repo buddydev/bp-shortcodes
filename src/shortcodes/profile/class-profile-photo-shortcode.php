@@ -45,7 +45,7 @@ class Profile_Photo_Shortcode {
 	 */
 	public function shortcode( $atts, $content = '' ) {
 		$default_atts = array(
-			'user-id'         => '',
+			'user_id'         => '',
 			'username'        => '',
 			'link-to-profile' => 1,
 			'type'            => 'full',
@@ -55,11 +55,11 @@ class Profile_Photo_Shortcode {
 
 		$atts = shortcode_atts( $default_atts, $atts, 'bpsc-profile-photo' );
 
-		if ( ! $atts['user-id'] && ! $atts['username'] ) {
+		if ( ! $atts['user_id'] && ! $atts['username'] ) {
 			return do_shortcode( $content );
 		}
 
-		$user = empty( $atts['user-id'] ) ? get_user_by( 'slug', $atts['username'] ) : get_user_by( 'id', $atts['user-id'] );
+		$user = empty( $atts['user_id'] ) ? get_user_by( 'slug', $atts['username'] ) : get_user_by( 'id', $atts['user_id'] );
 
 		if ( ! $user ) {
 			return do_shortcode( $content );
